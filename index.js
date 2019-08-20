@@ -23,32 +23,34 @@ function checkProjectExists(req, res, next) {
 server.post("/projects", (req, res) => {
   let { id, title } = req.body;
   projects.push({ id, title, tasks: [] });
-  res.status(201);
+  res.status(201).send();
 });
 
 server.get("/projects", (req, res) => {
   res.json(projects);
 });
 
-server.put("projects/:id", checkProjectExists, (req, res) => {
+server.put("/projects/:id", checkProjectExists, (req, res) => {
   let { id } = req.params;
   let { title } = req.body;
   let index = projects.findIndex(i => i.id == id);
   projects[index].title = title;
-  res.status(200);
+  res.status(200).send();
 });
 
-server.delete("projects/:id", checkProjectExists, (req, res) => {
+server.delete("/projects/:id", checkProjectExists, (req, res) => {
   let { id } = req.params;
   let index = projects.findIndex(i => i.id == id);
   projects.splice(index, 1);
-  res.status(200);
+  res.status(200).send();
 });
 
-server.post("projects/:id/tasks", checkProjectExists, (req, res) => {
+server.post("/projects/:id/tasks", checkProjectExists, (req, res) => {
   let { title } = req.body;
   let { id } = req.params;
   let index = projects.findIndex(i => i.id == id);
   projects[index].tasks.push(title);
-  res.status(201);
+  res.status(201).send();
 });
+
+server.listen(3000);

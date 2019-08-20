@@ -1,9 +1,12 @@
 {
-  "name": "api-todo",
+  "name": "api-tasks",
   "version": "1.0.0",
-  "description": "API em nodeJS de TODO.",
+  "description": "API em nodeJS de tarefas.",
   "main": "index.js",
-  "repository": "https://github.com/TiagoHellebrandt/api-todo",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": "https://github.com/TiagoHellebrandt/api-tasks",
   "author": "Tiago Hellebrandt <thellebrandtsilva@gmail.com>",
   "license": "MIT",
   "dependencies": {
