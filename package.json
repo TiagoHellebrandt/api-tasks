@@ -1,0 +1,9 @@
+{
+  "name": "api-todo",
+  "version": "1.0.0",
+  "description": "API em nodeJS de TODO.",
+  "main": "index.js",
+  "repository": "https://github.com/TiagoHellebrandt/api-todo",
+  "author": "Tiago Hellebrandt <thellebrandtsilva@gmail.com>",
+  "license": "MIT"
+}
